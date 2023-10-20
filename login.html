@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Log-in</title>
+
+    <link rel="stylesheet" href="src/css/login.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Source+Sans+3&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <header class="login-cabecalho cabecalho-fixo">
+        <img src="./src/imagens/logo.png" alt="logo" id="login-logo">
+
+    </header>
+
+
+
+
+    <section id="login">
+        <img src="./src/imagens/minimalista.png" alt="" width="540" height="540" loading="lazy">
+        <div>
+            <h1>Acessar minha conta</h1>
+            <h2 >Preencha seus dados para fazer login</h2>
+            <div class="info-login">
+                <div id="login-form">
+                    <form id="login-form" action="processar-login" method="post">
+
+                        <label for="email">Qual é o seu e-mail?</label>
+                        <input type="email" id="email" name="email" required placeholder="Informe seu e-mail">
+                        <label for="senha">Qual a sua senha?</label>
+                        <input type="password" id="senha" name="senha" required placeholder="Agora, digite sua senha">
+                        <button type="submit">Acessar</button>
+
+                    </form>
+                </div>
+            </div>
+        </div>
+
+        <script>
+            document.getElementById("login-form").addEventListener("submit", function (event) {
+                var cpfInput = document.getElementById("cpf");
+                var cpf = cpfInput.value;
+
+                     // Função para validar o formato do CPF
+                    function validarFormatoCPF(cpf) {
+                    // Remova todos os caracteres não numéricos do valor do campo CPF
+                    cpf = cpf.replace(/\D/g, "");
+
+                    // Verifique se o valor contém apenas números
+                    if (!/^\d*$/.test(cpf)) {
+                        alert("CPF inválido. Por favor, verifique o formato e insira apenas números.");
+                        event.preventDefault(); // Impede o envio do formulário se o CPF for inválido
+                    }
+                }
+
+                validarFormatoCPF(cpf);
+            });
+        </script>
+
+</body>
+
+</html>

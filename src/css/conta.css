@@ -1,0 +1,116 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Source Sans 3', sans-serif;
+}
+
+header {
+    height: 85px;
+}
+
+.conta-cabecalho {
+    border-bottom: 1px solid #E0E0E0;
+    padding-bottom: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+}
+
+
+.conta-cabecalho #conta-logo {
+    width: 200px;
+    /* Ajuste a largura desejada */
+    height: auto;
+    /* Mantém a proporção da imagem */
+    display: block;
+    margin: 0 auto;
+    margin-top: 15px;
+    text-align: center;
+}
+
+#conta {
+    display: flex;
+    align-items: center;
+    gap: 64px;
+    padding: 64px 80px;
+}
+
+.new-conta{
+        position: relative;
+    
+}
+
+
+
+#new-form label {
+    display: block;
+    margin-bottom: 10px;
+}
+
+#new-form input[type="text"],
+#new-form input[type="password"], 
+#new-form input[type="email"] {
+    width: 165%;
+    padding: 15px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 100px;
+}
+
+#new-form button {
+    background-color: #E0E0E0;
+    width: 165%;
+    padding: 15px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 100px;
+}
+
+#new-form button:hover {
+    background-color: #a52a2a;}
+
+
+#conta h1{
+    font-size: 25px;
+    margin-bottom: 20px;
+    margin-top: 70px;
+    text-align: left;
+    color: black;
+}
+
+#conta img{
+    border-radius: 0%;
+}
+
+.new-conta{
+    margin-top: 25px;
+}
+
+.cabecalho-fixo {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    background-color: #fff; 
+    z-index: 1000; 
+}
+
+h2{
+    font-size: 20px;
+    text-align: left;
+    color: black;
+}
+
+.vamos{
+    margin-top: 40px;
+}
+
+
+
+
+
+
+
+

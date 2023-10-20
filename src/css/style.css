@@ -1,0 +1,91 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Source Sans 3', sans-serif
+}
+
+body {
+    background-color: rgb(200, 200, 200);
+}
+
+
+#cabecalho {
+    background-color: #fff;
+    padding: 5px 10PX;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+header {
+    height: 85px;
+}
+
+
+#logo {
+    max-width: 175px;
+    margin-left: 70px;
+}
+
+
+
+.botao {
+    text-decoration: none;
+    font-weight: bold;
+    padding: 10px 20px;
+    border: none;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
+    cursor: pointer;
+    margin-right: 150px;
+    border-radius: 20px;
+    background-color: #000;
+    color: #fff;
+}
+
+.texto-entrar {
+    color: #000;
+    text-decoration: none;
+    font-weight: bold;
+    margin-right: 40px;
+
+}
+
+.inicio h1 strong {
+    font-size: 40px;
+    margin-bottom: 20px;
+    margin-top: 70px;
+
+}
+
+
+.inicio h1 {
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+
+}
+
+.inicio p {
+    font-size: 15px;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 2px;
+
+}
+
+.inicio {
+    text-align: center;
+}
+
+.promocao {
+    max-width: 750px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 15px;
+    border-radius: 20px;
+}

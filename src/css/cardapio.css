@@ -1,0 +1,181 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: SourceSansPro-Regular, Arial, Helvetica, sans-serif;
+}
+
+.containerr{
+    max-width: 1080px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+header{
+    background-color: #fff;
+    width: 100%;
+    padding: 10px; 
+    border-bottom: 1px solid #E0E0E0;
+    padding-bottom: 10px;
+
+}
+
+.cabecalho-fixo {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    background-color: #fff;
+    z-index: 1000; 
+}
+
+
+.marques {
+    width: 25%;
+}
+
+.marques img{
+    width: 175px;
+}
+
+.menu{
+    width: 50%;
+}
+
+.menu nav a{
+    color: #808080;
+    text-decoration: none;
+    padding-right: 50px;
+    font-size: 18px;
+}
+
+.sacola button{
+    width: 40px;
+    height: 40px;
+    border: none;
+    background-color: #fff;
+}
+
+.sacola button i{
+  font-size: 20px;
+  color: red;
+}
+
+.menu a:hover {
+    color: red;
+  }
+
+  .sacola button {
+    cursor: pointer;
+  }
+
+  .menu a.selecionado {
+    color: red;
+}
+
+
+
+.pizzas h2 {
+    margin-left: 50px;
+}
+
+h2 {
+    margin-top: 20px;
+    max-width: 175px;
+    margin-left: 70px;
+}
+
+
+.pizza-item {
+    display: inline-block;
+    margin: 10px;
+    padding: 10px;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+    transition: background-color 0.3s;
+    cursor: pointer;
+    text-align: center;
+}
+
+.pizza-item img {
+    max-width: 400px;
+    border-radius: 10px;
+    display: block;
+    margin: 0 auto;
+    
+}
+
+.pizza-item {
+    display: inline-block;
+    margin: 10px;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+    transition: background-color 0.3s;
+    cursor: pointer;
+
+}
+
+.pizza-item img {
+    max-width: 200px;
+    border-radius: 10px;
+}
+
+.pizza-item button {
+    background-color: #E0E0E0;
+    color: black;
+    border: none;
+    border-radius: 10%;
+    padding: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    margin-top: 10px;
+}
+
+.pizza-item button:hover {
+    background-color: red;
+}
+
+.preco strong {
+    font-weight: bold; 
+}
+
+
+.pizzas-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    margin-top: 10px;
+}
+
+.pizza-section {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+ margin-top: 10px;
+}
+
+.pizza-item {
+    width: 30%; /* Para acomodar três pizzas em uma linha */
+    margin: 10px;
+    padding: 10px;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+    transition: background-color 0.3s;
+    cursor: pointer;
+    text-align: center;
+}
+
+.pizza-item img {
+    max-width: 100%;
+    border-radius: 10px;
+    display: block;
+    margin: 0 auto;
+}
+
