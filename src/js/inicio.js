@@ -1,15 +1,17 @@
 /*responsivo*/
 
+initCart()
+
 let menu = document.querySelector('#menu-bar');
 let navbar = document.querySelector('#navbar');
 
-menu.onclick = () =>{
+menu.onclick = () => {
     menu.classList.toggle('fa-times');
     navbar.classList.toggle('active');
 }
 
-window.onscroll = () =>{
-  
+window.onscroll = () => {
+
     menu.classList.remove('fa-times');
     navbar.classList.toggle('active');
 
@@ -24,5 +26,6 @@ window.onscroll = () =>{
 
 /*ao clicar nos icones do cabeçalho levar o usuario para cada um deles"*/
 
+// Variáveis globais para armazenar itens do carrinho e preço total
 
 

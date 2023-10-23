@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -9,37 +10,52 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 
     <link rel="stylesheet" href="./src/css/inicio.css">
+    <link rel="stylesheet" href="./src/css/sacola.css">
 </head>
+
 <body>
 
-<header>
+    <header>
 
-    <img class="marques" src="./src/imagens/logo.png" alt="">
+        <img class="marques" src="./src/imagens/logo.png" alt="">
 
-    <div id="menu-bar" class="fas fa-bars"></div>
+        <div id="menu-bar" class="fas fa-bars"></div>
 
-    <nav class="navbar">
-        <a href="inicio.html"><i class="fas fa-home"></i>Início</a>
-        <a href="cardapio.html"><i class="fas fa-pizza-slice"></i>Cardápio</a>
-        <a href="bebidas.html"><i class="fas fa-wine-glass"></i>Bebidas</a>
-        <a href="#pedidos"><i class="fas fa-shopping-bag"></i>Sacola</a>
-    </nav>
+        <nav class="navbar">
+            <a href="inicio.html"><i class="fas fa-home"></i>Início</a>
+            <a href="cardapio.html"><i class="fas fa-pizza-slice"></i>Cardápio</a>
+            <a href="bebidas.html"><i class="fas fa-wine-glass"></i>Bebidas</a>
+            <a href="#pedidos" id="sacola"><i class="fas fa-shopping-bag"></i>Sacola</a>
+        </nav>
 
-</header>
+    </header>
 
+    <div class="popup-container" id="popup">
+        <div class="popup-content">
+            <span class="close-btn" id="close-popup">&times;</span>
+            <h2>Sacola</h2>
+            <div id="empty-cart-message" style="display: none;">Sacola Vazia</div>
+            <div id="cart-items"></div>
+            <p>Total: R$ <span id="total-price">0,00</span></p>
+            <button class="btn-cancelar" id="cancelar-pedido">Cancelar Pedido</button>
+            <a href="pagina-de-pagamento.html" class="btn-finalizar">Finalizar</a>
+        </div>
+    </div>
 
-<section class="inicio" id="inicio">
-   <div class="content">
-    <h3>Fome de pizza? Peça agora!</h3>
-    <p>Aproveite essa oportunidade e peça uma de nossas maravilhosas pizzas para nos ajudar no valor da DP</p>
-    <a href="#cardapio" class="btn">Ver cardápio</a>
-   </div>
+    <section class="inicio" id="inicio">
+        <div class="content">
+            <h3>Fome de pizza? Peça agora!</h3>
+            <p>Aproveite essa oportunidade e peça uma de nossas maravilhosas pizzas para nos ajudar no valor da DP</p>
+            <a href="#cardapio" class="btn">Ver cardápio</a>
+        </div>
 
-   <div class="image">
-    <img class="promotion" src="./src/imagens/Pizzaria Marquês.png" alt="">
-   </div>
+        <div class="image">
+            <img class="promotion" src="./src/imagens/Pizzaria Marquês.png" alt="">
+        </div>
 
-</section>
+    </section>
     <script src="./src/js/inicio.js"></script>
+    <script src="./src/js/sacola.js"></script>
 </body>
+
 </html>
