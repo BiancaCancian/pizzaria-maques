@@ -92,6 +92,7 @@ function initCart() {
     if (localStorage.getItem('cartItems')) {
         // Obter os itens do carrinho do localStorage e convertê-los de volta para um objeto JavaScript
         cartItems = JSON.parse(localStorage.getItem('cartItems'));
+        totalPrice = parseFloat(localStorage.getItem('totalPrice')) || 0;
 
         // Inicializar propriedades ausentes (se necessário)
         cartItems.forEach(item => {
@@ -105,6 +106,11 @@ function initCart() {
 
 
 let totalPrice = 0;
+
+function saveCartData() {
+    localStorage.setItem('cartItems', JSON.stringify(cartItems));
+    localStorage.setItem('totalPrice', JSON.stringify(totalPrice));
+}
 
 function addItemToCart(itemId, type) {
     const selectedItem = menuItems[type].find(item => item.id === itemId);
@@ -131,7 +137,7 @@ function addItemToCart(itemId, type) {
         // Atualizar o pop-up da sacola
         updateCartPopup();
         // Salvar o carrinho atualizado no localStorage após adicionar um item
-        localStorage.setItem('cartItems', JSON.stringify(cartItems));
+        saveCartData();
     }
 }
 
