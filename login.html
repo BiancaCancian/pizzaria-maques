@@ -23,10 +23,10 @@
 
 
     <section id="login">
-        <img src="./src/imagens/minimalista.png" alt="" width="540" height="540" loading="lazy">
+        <img src="./src/imagens/minimalista.png" alt="" width="740" height="740" loading="lazy">
         <div>
             <h1>Acessar minha conta</h1>
-            <h2 >Preencha seus dados para fazer login</h2>
+            <h2>Preencha seus dados para fazer login</h2>
             <div class="info-login">
                 <div id="login-form">
                     <form id="login-form" action="processar-login" method="post">
@@ -47,8 +47,8 @@
                 var cpfInput = document.getElementById("cpf");
                 var cpf = cpfInput.value;
 
-                     // Função para validar o formato do CPF
-                    function validarFormatoCPF(cpf) {
+                // Função para validar o formato do CPF
+                function validarFormatoCPF(cpf) {
                     // Remova todos os caracteres não numéricos do valor do campo CPF
                     cpf = cpf.replace(/\D/g, "");
 
