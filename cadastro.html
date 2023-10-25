@@ -22,7 +22,7 @@
 
 
     <section id="conta">
-        <img src="./src/imagens/minimalista.png" alt="" width="540" height="540" loading="lazy">
+        <img src="./src/imagens/minimalista.png" alt="" loading="lazy">
         <div>
             <h1>Criar minha conta</h1>
             <h2 class="vamos">Boa, vamos começar!</h2>
@@ -40,10 +40,12 @@
                         <input type="text" id="logradouro" name="logradouro" required placeholder="Informe sua rua">
 
                         <label for="numero">Qual o numero da residência?</label>
-                        <input type="text" id="numero" name="numero" required placeholder="Informe o numero da residencia">
+                        <input type="text" id="numero" name="numero" required
+                            placeholder="Informe o numero da residencia">
 
                         <label for="complemento">Há algum complemento?</label>
-                        <input type="text" id="complemento" name="complemento" required placeholder="Informe seu complemento">
+                        <input type="text" id="complemento" name="complemento" required
+                            placeholder="Informe seu complemento">
 
                         <label for="cidade">Qual é a sua cidade?</label>
                         <input type="text" id="cidade" name="cidade" required placeholder="Informe sua cidade">
@@ -71,7 +73,7 @@
                 var cpf = document.getElementById("cpf").value;
                 var senha = document.getElementById("senha").value;
 
-                 // Função para validar o formato do CPF
+                // Função para validar o formato do CPF
                 function validarFormatoCPF(cpf) {
                     // Remova todos os caracteres não numéricos do valor do campo CPF
                     cpf = cpf.replace(/\D/g, "");

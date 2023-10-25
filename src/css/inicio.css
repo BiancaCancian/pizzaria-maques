@@ -1,308 +1,349 @@
 :root{
-   color: #FF0000;
-}
-
-*{
-    font-family: SourceSansPro-Regular, Arial, Helvetica, sans-serif;
-    margin: 0; padding: 0;
-    box-sizing: border-box;
-    outline: none; border: none;
-    text-decoration: none;
-    text-transform: capitalize;
-    transition: all .2s linear;
-}
-
-*::selection{
-    background-color: var(#FF0000);
-    color: #fff;
-}
-
-html{
-    font-size: 62.5%;
-    overflow-x: hidden;
-    scroll-behavior: smooth;
-    scroll-padding-top: 6rem;
-}
-
-body{
-    background: #f8f8f8;
-}
-
-.btn{
-    display: inline-block;
-    padding: .8rem 3rem;
-    border: .2rem solid  #FF0000;
-    color:  #FF0000;
-    cursor: pointer;
-    font-size: 1.7rem;
-    border-radius: .5rem;
-    position: relative;
-    overflow: hidden;
-    z-index: 0;
-    margin-top: 1rem;
-}
-
-.btn::before{
-  content: '';
-  position: absolute;
-  top: 0; right: 0;
-  width: 0%;
-  height: 100%;
-  background: #FF0000;
-  transition: .3s linear;
-  z-index: -1;
-}
-
-.btn:hover::before{
-   width: 100%;
-   left:0 ;
-}
-
-.btn:hover{
-    color: #fff;
-}
-
-section{
-    padding: 2rem 9%;
-}
-
-header{
-    position: fixed;
-    top: 0; left: 0; right: 0;
-    z-index: 1000;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    background: #fff;
-    padding:2rem 9%;
-    box-shadow: 0.5rem 0.1rem rgba(0, 0, 0, .1);
-    
-}
-
-.marques {
-    max-width: 175px;
-    margin-left: 70px;
-}
-
-header{
-    height: 85px;
-}
-
-header .logo{
-    font-size: 2.5rem;
-    font-weight: bolder;
-    color: #666;
-}
-
-header .logo i{
-    padding-right: .5rem;
-    color:  #FF0000;
-}
-
-header .navbar a{
-    font-size: 18px;
-    margin-left: 2rem;
-    color: #666;
-}
-
-header .navbar a:hover{
     color: #FF0000;
-}
-
-#menu-bar{
-    font-size: 3rem;
-    cursor: pointer;
-    color: #666;
-    border: .1rem solid #666;
-    border-radius: .3rem;
-    padding:.5rem 1.5rem;
-    display: none;
-}
-
-.inicio{
-    display:flex;
-    flex-wrap: wrap;
-    gap: 1.5rem;
-    min-height: 100vh;
-    align-items: center;
-    background-size: cover;
-    background-position: center;
-}
-
-.inicio .content{
-    flex: 1 1 40rem;
-    padding-top: 6.5rem;
-}
-
-.inicio .image{
-    flex: 1 1 40rem;
-}
-
-.inicio .image img{
-    width: 100%;
-    padding: 1rem;
-    animation: float 4s linear infinite;
-    margin-top: 75px;
-    border-radius: 20px;
+ }
  
-}
-
-.inicio .content h3{
-    text-transform: none;
-    font-size: 35px;
+ *{
+     font-family: SourceSansPro-Regular, Arial, Helvetica, sans-serif;
+     margin: 0; padding: 0;
+     box-sizing: border-box;
+     outline: none; border: none;
+     text-decoration: none;
+     text-transform: capitalize;
+     transition: all .2s linear;
+ }
+ 
+ *::selection{
+     background-color: var(#FF0000);
+     color: #fff;
+ }
+ 
+ html{
+     font-size: 62.5%;
+     overflow-x: hidden;
+     scroll-behavior: smooth;
+     scroll-padding-top: 6rem;
+ }
+ 
+ body{
+     background: #f8f8f8;
+ }
+ 
+ .btn{
+     display: inline-block;
+     padding: .8rem 3rem;
+     border: .2rem solid  #FF0000;
+     color:  #FF0000;
+     cursor: pointer;
+     font-size: 1.7rem;
+     border-radius: .5rem;
+     position: relative;
+     overflow: hidden;
+     z-index: 0;
+     margin-top: 1rem;
+ }
+ 
+ .btn::before{
+   content: '';
+   position: absolute;
+   top: 0; right: 0;
+   width: 0%;
+   height: 100%;
+   background: #FF0000;
+   transition: .3s linear;
+   z-index: -1;
+ }
+ 
+ .btn:hover::before{
+    width: 100%;
+    left:0 ;
+ }
+ 
+ .btn:hover{
+     color: #fff;
+ }
+ 
+ section{
+     padding: 2rem 9%;
+ }
+ 
+ header{
+     position: fixed;
+     top: 0; left: 0; right: 0;
+     z-index: 1000;
+     display: flex;
+     align-items: center;
+     justify-content: space-between;
+     background: #fff;
+     padding:2rem 9%;
+     box-shadow: 0.5rem 0.1rem rgba(0, 0, 0, .1);
+     
+ }
+ 
+ .marques {
+     max-width: 175px;
+     margin-left: 70px;
+ }
+ 
+ header{
+     height: 85px;
+ }
+ 
+ header .logo{
+     font-size: 2.5rem;
+     font-weight: bolder;
+     color: #666;
+ }
+ 
+ header .logo i{
+     padding-right: .5rem;
+     color:  #FF0000;
+ }
+ 
+ header .navbar a{
+     font-size: 18px;
+     margin-left: 2rem;
+     color: #666;
+ }
+ 
+ header .navbar a:hover{
+     color: #FF0000;
+ }
+ 
+ #menu-bar{
+     font-size: 3rem;
+     cursor: pointer;
+     color: #666;
+     border: .1rem solid #666;
+     border-radius: .3rem;
+     padding:.5rem 1.5rem;
+     display: none;
+ }
+ 
+ .inicio{
+     display:flex;
+     flex-wrap: wrap;
+     gap: 1.5rem;
+     min-height: 100vh;
+     align-items: center;
+     background-size: cover;
+     background-position: center;
+ }
+ 
+ .inicio .content{
+     flex: 1 1 40rem;
+     padding-top: 6.5rem;
+ }
+ 
+ .inicio .image{
+     flex: 1 1 40rem;
+ }
+ 
+ .inicio .image img{
+     width: 100%;
+     padding: 1rem;
+     animation: float 4s linear infinite;
+     margin-top: 75px;
+     border-radius: 20px;
+  
+ }
+ 
+ .inicio .content h3{
+     text-transform: none;
+     font-size: 35px;
+     color: black;
+     padding: 2rem 0;
+ }
+ 
+ 
+  .inicio .content p{
+     text-transform: none;
+     font-size: 15px;
+     color: #666;
+     padding: 2rem 0;
+  }
+ 
+ 
+ @keyframes float{
+     0%, 100%{
+         transform: translateY(0rem);
+     }
+ 
+     50%{
+         transform: translateY(3rem);
+     }
+ }
+ 
+ .cardapio .box-container{
+     display: flex;
+     flex-wrap: wrap;
+     gap: 1.5rem;
+     margin-top: 85px; 
+ }
+ 
+ .cardapio .box-container .box{
+     padding: 2rem;
+     background: #fff;
+     box-shadow: 0.5rem 0.5rem rgba(0, 0, 0, .1);
+     border: 0.5rem solid rgba(0, 0, 0, .3);
+     border-radius: .5rem;
+     text-align: center;
+     flex: 1 1 30rem;
+     position: relative;
+ }
+ 
+ .cardapio .box-container .box img{
+   height: 25rem;
+   object-fit: cover;
+   width: 100%;
+   border-radius: .5rem;
+ }
+ 
+ .cardapio .box-container .box .price{
+     position: absolute;
+     top: 3rem; left: 3rem;
+     background: #FF0000;;
+     color: #fff;
+     font-size: 2rem;
+     padding: .5rem 1rem;
+     border-radius: .5rem;
+ }
+ 
+ .cardapio .box-container .box h3{
     color: black;
-    padding: 2rem 0;
-}
-
-
- .inicio .content p{
-    text-transform: none;
-    font-size: 15px;
-    color: #666;
-    padding: 2rem 0;
+    font-size: 25px;
+    padding-top: 1rem;
  }
-
-
-@keyframes float{
-    0%, 100%{
-        transform: translateY(0rem);
-    }
-
-    50%{
-        transform: translateY(3rem);
-    }
-}
-
-.cardapio .box-container{
-    display: flex;
-    flex-wrap: wrap;
-    gap: 1.5rem;
-    margin-top: 85px; 
-}
-
-.cardapio .box-container .box{
-    padding: 2rem;
-    background: #fff;
-    box-shadow: 0.5rem 0.5rem rgba(0, 0, 0, .1);
-    border: 0.5rem solid rgba(0, 0, 0, .3);
-    border-radius: .5rem;
-    text-align: center;
-    flex: 1 1 30rem;
-    position: relative;
-}
-
-.cardapio .box-container .box img{
-  height: 25rem;
-  object-fit: cover;
-  width: 100%;
-  border-radius: .5rem;
-}
-
-.cardapio .box-container .box .price{
-    position: absolute;
-    top: 3rem; left: 3rem;
-    background: #FF0000;;
-    color: #fff;
-    font-size: 2rem;
-    padding: .5rem 1rem;
-    border-radius: .5rem;
-}
-
-.cardapio .box-container .box h3{
-   color: black;
-   font-size: 25px;
-   padding-top: 1rem;
-}
-
-.cardapio .box-container .box i{
-    color: gold;
-    font-size: 1.7rem;
-    padding-top: 1rem .1rem;
+ 
+ .cardapio .box-container .box i{
+     color: gold;
+     font-size: 1.7rem;
+     padding-top: 1rem .1rem;
+  }
+ 
+  .inicio .box-container{
+     display: flex;
+     flex-wrap: wrap;
+     gap: 1.5rem;
  }
-
- .inicio .box-container{
-    display: flex;
-    flex-wrap: wrap;
-    gap: 1.5rem;
-}
-
-.inicio .box-container .box{
-    padding: 2rem;
-    background: #fff;
-    border-radius: .5rem;
-    text-align: center;
-    flex: 1 1 15rem;
-    position: relative;
-}
-
-
-.inicio .box-container .box img{
-  height: 25rem;
-  object-fit: cover;
-  width: 100%;
-  border-radius: 10px;
-
-}
-
-.navbar i{
-    color:  #FF0000;
+ 
+ .inicio .box-container .box{
+     padding: 2rem;
+     background: #fff;
+     border-radius: .5rem;
+     text-align: center;
+     flex: 1 1 15rem;
+     position: relative;
  }
-
- .navbar a i {
-    margin-right: 10px; 
-}
-
-.promo h1{
-    font-size: 15px;
-}
-
-
-/* responsivo */
-@media(max-width: 991px){
-
-    html{
-        font-size: 55%;
-    }
-    header{
-        padding: 2rem;
-    }
-
-    section{
-        padding: 2rem;
-    }
-}
-
-
-@media(max-width: 768px){
-    #menu-bar{
-        display: initial ;
-    }
-
-    header .navbar{
-        position: absolute;
-        top:100%; left: 0; right: 0;
-        background: #f7f7f7;
-        border-top: .1rem solid rgba(0, 0, 0, .1);
-        clip-path:polygon(0 0, 100% 0, 100% 0, 0 0) ;
-    }
-
-    header .navbar .active{
-        clip-path:polygon(0 0, 100% 0, 100% 0, 0 0) ;
-    }
-
-    header .navbar a{
-        margin: 1.5rem;
-        padding:1.5rem;
-        display: block;
-        border: .2rem solid rgba(0, 0, 0, .1);
-        border-left: .5rem solid  #FF0000;
-        background: #fff;
-    }
-}
-
-@media(max-width: 400px){
-
-    html{
-        font-size: 50%;
-    }
-}
+ 
+ 
+ .inicio .box-container .box img{
+   height: 25rem;
+   object-fit: cover;
+   width: 100%;
+   border-radius: 10px;
+ 
+ }
+ 
+ .navbar i{
+     color:  #FF0000;
+  }
+ 
+  .navbar a i {
+     margin-right: 10px; 
+ }
+ 
+ .promo h1{
+     font-size: 15px;
+ }
+ 
+ 
+ /* responsivo */
+ @media(max-width: 991px){
+ 
+     html{
+         font-size: 55%;
+     }
+     header{
+         padding: 2rem;
+     }
+ 
+     section{
+         padding: 2rem;
+     }
+ }
+ 
+ 
+ @media(max-width: 768px){
+     #menu-bar{
+         display: initial ;
+     }
+ 
+     header .navbar{
+         position: absolute;
+         top:100%; left: 0; right: 0;
+         background: #f7f7f7;
+         border-top: .1rem solid rgba(0, 0, 0, .1);
+         clip-path:polygon(0 0, 100% 0, 100% 0, 0 0) ;
+     }
+ 
+     header .navbar .active{
+         clip-path:polygon(0 0, 100% 0, 100% 0, 0 0) ;
+     }
+ 
+     header .navbar a{
+         margin: 1.5rem;
+         padding:1.5rem;
+         display: block;
+         border: .2rem solid rgba(0, 0, 0, .1);
+         border-left: .5rem solid  #FF0000;
+         background: #fff;
+     }
+ }
+ 
+ @media(max-width: 400px){
+ 
+     html{
+         font-size: 50%;
+     }
+ }
+ 
+ 
+ 
+ 
+ 
+ .bom{
+     display: inline-block;
+     padding: .2rem 1rem;
+     border: .2rem solid  #FF0000;
+     color:  #FF0000;
+     cursor: pointer;
+     font-size: 1.7rem;
+     border-radius: .5rem;
+     position: relative;
+     overflow: hidden;
+     z-index: 0;
+     margin-top: 2rem;
+     margin-right: 0.2rem;
+     margin-bottom: 0.5rem;
+ }
+ 
+ .bom::before{
+   content: '';
+   position: absolute;
+   top: 0; right: 0;
+   width: 0%;
+   height: 100%;
+   background: #FF0000;
+   transition: .3s linear;
+   z-index: -1;
+   color: #fff;
+ }
+ 
+ .bom:hover::before{
+    width: 100%;
+    left:0 ;
+ }
+ 
+ .bom:hover{
+     color: #fff;
+ }
