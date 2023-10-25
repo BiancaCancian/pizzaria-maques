@@ -42,15 +42,50 @@
 </section>
 
 <section class="pagamento">
+    <h5><strong>💰Selecione a opção de pagamento:</strong></h5>
     <div class="content">
         <div class="caixa">
-           <h5><strong>💰Selecione a opção de pagamento:</strong></h5>
-           <button class="peperonildo">Pix</button>
-           <button class="peperonildo">Dinheiro</button>
-           <button class="peperonildo">Cartão</button>
+           <button class="peperonildo"><strong>Pix</strong></button>  
+           <img class="queijudao" src="./src/imagens/pix.svg" alt="">  
+        </div>
         
+        <div class="caixa">
+            <button class="peperonildo"><strong>Dinheiro</strong></button>
+            <img class="queijudao" src="./src/imagens/money-check-dollar-solid.svg" alt="">
+        </div>
+
+        <div class="caixa">
+            <button class="peperonildo"><strong>Cartão</strong></button>
+            <img  class="queijudao" src="./src/imagens/credit-card-regular.svg" alt="">
+        </div>
+    </div>
+
+</section>
+
+<h6><strong>🍕Revise seu pedido:</strong></h6>
+
+<!-- Aparecer pedidos da sacola -->
+<section class="revisar">
+    <div class="box-Contenter">
+        <div class="boxi">
+            <button class="joe"><strong>Finalizar</strong></button>
         </div>
     </div>
 </section>
+
+<script>
+    const botoes = document.querySelectorAll('.peperonildo');
+    botoes.forEach(botao => {
+      botao.addEventListener('click', () => {
+        botoes.forEach(b => {
+          b.classList.remove('selecionado');
+          b.style.backgroundColor = '';
+        });
+        botao.classList.add('selecionado');
+        botao.style.backgroundColor = 'red';
+      });
+    });
+    
+</script>
 </body>
 </html>
