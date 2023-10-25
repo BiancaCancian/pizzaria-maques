@@ -103,14 +103,100 @@ function initCart() {
     }
 }
 
+/*
+
+                METODO POST DO PEDIDO - inicio
+
+*/
 
 
 let totalPrice = 0;
 
 function saveCartData() {
-    localStorage.setItem('cartItems', JSON.stringify(cartItems));
-    localStorage.setItem('totalPrice', JSON.stringify(totalPrice));
+    const pedido = {
+        id_cliente_pedido: 1, // Você pode definir o ID do cliente como desejado
+        status_pedido: "Em andamento",
+        pedidoBebida: [],
+        pedidoPizza: []
+    };
+
+    // Iterar pelos itens do carrinho e adicionar ao pedido
+    cartItems.forEach(item => {
+
+        if (item.type === "bebidas") {
+            pedido.pedidoBebida.push({
+                quantidade_pedido_bebida: item.quantity,
+                tamanho_pedido_bebida: "Grande", 
+                idBebida: {
+                    id_bebida: item.id
+                }
+            });
+        } else if (item.type === "pizzas") {
+            pedido.pedidoPizza.push({
+                quantidade_pedido_pizza: item.quantity,
+                tamanho_pedido_pizza: "Grande", 
+                idPizza: {
+                    id_pizza: item.id
+                }
+            });
+        }
+    });
+
+    // Fazer a requisição POST com o objeto `pedido` no corpo
+    fetch('http://localhost:9090/pedido/fazerPedido', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(pedido)
+    })
+    .then(response => response.json())
+    .then(data => {
+        console.log('Pedido feito com sucesso:', data);
+        // Limpar o carrinho e fazer outras ações após o pedido bem-sucedido, se necessário
+        clearCart();
+    })
+    .catch(error => {
+        console.error('Erro ao fazer pedido:', error);
+        // Tratar erros, se necessário
+    });
 }
+
+/*
+
+                METODO POST DO PEDIDO - FIM
+
+*/
+
+/*
+
+                FINALIZAR O PEDIDO - inicio
+
+*/
+
+const finalizarPedidoButton = document.getElementById('finalizar-pedido');
+finalizarPedidoButton.addEventListener('click', function (event) {
+    event.preventDefault(); // Impedir o comportamento padrão do link (navegação)
+
+    // Enviar dados da sacola como JSON para o servidor e redirecionar para a página de pagamento
+    saveCartData(); 
+
+    // Redirecionar para a página de pagamento após enviar os dados para o servidor
+    window.location.href = 'pagamento.html';
+});
+
+/*
+
+                FINALIZAR O PEDIDO - FIM
+
+*/
+
+
+/*
+
+                PARTE VISUAL DA SACOLA ONDE OS ITEMS SÃO ADICIONADOS - Inicio
+
+*/
 
 function addItemToCart(itemId, type) {
     const selectedItem = menuItems[type].find(item => item.id === itemId);
@@ -141,7 +227,11 @@ function addItemToCart(itemId, type) {
     }
 }
 
+/*
 
+                PARTE VISUAL DA SACOLA ONDE OS ITEMS SÃO ADICIONADOS - FIM
+
+*/
 
 
 
@@ -270,4 +360,3 @@ const clearCartButton = document.getElementById('cancelar-pedido');
 clearCartButton.addEventListener('click', function () {
     clearCart();
 });
-
