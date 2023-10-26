@@ -1,91 +1,94 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Finalizar pedido</title>
 
-    
+
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro&display=swap">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 
     <link rel="stylesheet" href="./src/css/pagamento.css">
 
 </head>
+
 <body>
-    
-<header>
-    <img class="marques" src="./src/imagens/logo.png" alt="">
 
-    <nav class="navbar">
-        <a href="inicio.html"><i class="fas fa-home"></i>Início</a>
-        <a href="cardapio.html"><i class="fas fa-pizza-slice"></i>Cardápio</a>
-        <a href="bebidas.html"><i class="fas fa-wine-glass"></i>Bebidas</a>
-        <a href="#pedidos" id="sacola"><i class="fas fa-shopping-bag"></i>Sacola</a>
-    </nav>
-</header>
+    <header>
+        <img class="marques" src="./src/imagens/logo.png" alt="">
 
-<h4>📍Agora é só conferir o valor e escolher sua forma<br>de pagamento.</h4>
+        <nav class="navbar">
+            <a href="inicio.html"><i class="fas fa-home"></i>Início</a>
+            <a href="cardapio.html"><i class="fas fa-pizza-slice"></i>Cardápio</a>
+            <a href="bebidas.html"><i class="fas fa-wine-glass"></i>Bebidas</a>
+            <a href="#pedidos" id="sacola"><i class="fas fa-shopping-bag"></i>Sacola</a>
+        </nav>
+    </header>
 
-<!-- Puxar endereco do banco de dados -->
-<section class="endereco">
-<div class="box-container">
-<div class="box">
-    <form id="new-form" action="" method="post">
+    <h4>📍Agora é só conferir o valor e escolher sua forma<br>de pagamento.</h4>
 
-        <label for="endereco" ><strong>🚴‍♂️O pedido será enviado para:</strong></label>
-        <input type="text" id="nome" name="endereco" >
-    <a href="#" class="btn" data-id-endereco="2" id="butto"><strong>Alterar endereço</strong></a>
-    </form>
-  </div>
-</div>
-</section>
+    <!-- Puxar endereco do banco de dados -->
+    <section class="endereco">
+        <div class="box-container">
+            <div class="box">
+                <form id="new-form" action="" method="post">
 
-<section class="pagamento">
-    <h5><strong>💰Selecione a opção de pagamento:</strong></h5>
-    <div class="content">
-        <div class="caixa">
-           <button class="peperonildo"><strong>Pix</strong></button>  
-           <img class="queijudao" src="./src/imagens/icons8-foto-50 (1).png" alt="">  
+                    <label for="endereco"><strong>🚴‍♂️O pedido será enviado para:</strong></label>
+                    <input type="text" id="nome" name="endereco">
+                    <a href="#" class="btn" data-id-endereco="2" id="butto"><strong>Alterar endereço</strong></a>
+                </form>
+            </div>
         </div>
-        
-        <div class="caixa">
-            <button class="peperonildo"><strong>Dinheiro</strong></button>
-            <img class="queijudao" src="./src/imagens/icons8-dinheiro-24.png" alt="">
+    </section>
+
+    <section class="pagamento">
+        <h5><strong>💰Selecione a opção de pagamento:</strong></h5>
+        <div class="content">
+            <div class="caixa">
+                <button class="peperonildo"><strong>Pix</strong></button>
+                <img class="queijudao" src="./src/imagens/icons8-foto-50 (1).png" alt="">
+            </div>
+
+            <div class="caixa">
+                <button class="peperonildo"><strong>Dinheiro</strong></button>
+                <img class="queijudao" src="./src/imagens/icons8-dinheiro-24.png" alt="">
+            </div>
+
+            <div class="caixa">
+                <button class="peperonildo"><strong>Cartão</strong></button>
+                <img class="queijudao" src="./src/imagens/icons8-cartão-24.png" alt="pizza">
+            </div>
         </div>
 
-        <div class="caixa">
-            <button class="peperonildo"><strong>Cartão</strong></button>
-            <img  class="queijudao" src="./src/imagens/icons8-cartão-24.png" alt="pizza">
+    </section>
+
+    <h6><strong>🍕Revise seu pedido:</strong></h6>
+
+    <!-- Aparecer pedidos da sacola -->
+    <section class="revisar">
+        <div class="box-Contenter">
+            <div class="boxi">
+                <button class="joe"><strong>Finalizar</strong></button>
+            </div>
         </div>
-    </div>
+    </section>
 
-</section>
-
-<h6><strong>🍕Revise seu pedido:</strong></h6>
-
-<!-- Aparecer pedidos da sacola -->
-<section class="revisar">
-    <div class="box-Contenter">
-        <div class="boxi">
-            <button class="joe"><strong>Finalizar</strong></button>
-        </div>
-    </div>
-</section>
-
-<script>
-    const botoes = document.querySelectorAll('.peperonildo');
-    botoes.forEach(botao => {
-      botao.addEventListener('click', () => {
-        botoes.forEach(b => {
-          b.classList.remove('selecionado');
-          b.style.backgroundColor = '';
+    <script>
+        const botoes = document.querySelectorAll('.peperonildo');
+        botoes.forEach(botao => {
+            botao.addEventListener('click', () => {
+                botoes.forEach(b => {
+                    b.classList.remove('selecionado');
+                    b.style.backgroundColor = '';
+                });
+                botao.classList.add('selecionado');
+                botao.style.backgroundColor = 'red';
+            });
         });
-        botao.classList.add('selecionado');
-        botao.style.backgroundColor = 'red';
-      });
-    });
-    
-</script>
+
+    </script>
 </body>
+
 </html>
