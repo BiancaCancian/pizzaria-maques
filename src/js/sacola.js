@@ -114,9 +114,9 @@ let totalPrice = 0;
 
 
 
-function saveCartData() {
+async function saveCartData() {
     const pedido = {
-        "id_cliente_pedido": 1, 
+        "id_cliente_pedido": 2, 
         "status_pedido": "Em andamento",
         "pedidoBebida": [],
         "pedidoPizza": []
@@ -153,9 +153,10 @@ function saveCartData() {
     localStorage.setItem('totalPrice', totalPrice)
 
     // Fazer a requisição POST com o objeto `pedido` no corpo
-    fetch('http://localhost:9090/pedido/fazerPedido', {
+    await fetch('http://localhost:9090/pedido/fazerPedido', {
         method: 'POST',
         headers: {
+            'Accept': 'application/json',
             'Content-Type': 'application/json'
         },
         body: JSON.stringify(pedido)
@@ -192,7 +193,7 @@ finalizarPedidoButton.addEventListener('click', function (event) {
     saveCartData(); 
 
     // Redirecionar para a página de pagamento após enviar os dados para o servidor
-    window.location.href = 'pagamento.html';
+    //window.location.href = 'pagamento.html';
 });
 
 /*
@@ -231,10 +232,7 @@ function addItemToCart(itemId, type) {
         // Atualizar o preço total
         totalPrice += selectedItem.price;
 
-        // Atualizar o pop-up da sacola
-        updateCartPopup();
-        // Salvar o carrinho atualizado no localStorage após adicionar um item
-        saveCartData();
+        
     }
 }
 

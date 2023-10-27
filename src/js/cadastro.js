@@ -37,7 +37,7 @@ function submitCadastro(event) {
                 })
                 .then(function (res) {
                     console.log(res);
-                    window.location.href = "inicio.html";
+                    window.location.href = 'inicio.html';
                 })
                 .catch(function (error) {
                     console.log(error);
@@ -52,7 +52,17 @@ function submitCadastro(event) {
 
 
 const botao = document.getElementById('concluir');
-botao.addEventListener('click', submitCadastro);
+
+const finalizarPedidoButton = document.getElementById('finalizar-pedido');
+botao.addEventListener('click', function (event) {
+    event.preventDefault(); 
+
+
+    submitCadastro();
+
+ 
+    window.location.href = 'inicio.html';
+});
 
 
 
