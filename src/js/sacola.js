@@ -83,7 +83,7 @@ let cartItems = [];
 // Chamar a função initCart ao carregar a página para inicializar o carrinho
 window.addEventListener('load', function () {
     initCart();
-    // Outras inicializações ou código que você precise executar ao carregar a página podem vir aqui
+
 });
 
 // Função para inicializar o carrinho ao carregar a página
@@ -130,7 +130,6 @@ async function saveCartData() {
         if (item.type === "bebidas") {
             pedido.pedidoBebida.push({
                 "quantidade_pedido_bebida": item.quantity,
-                "tamanho_pedido_bebida": "Grande",
                 "forma_pagamento_pedido": "Debito", 
                 "idBebida": {
                     "id_bebida": item.id
@@ -147,7 +146,6 @@ async function saveCartData() {
         }
     });
 
-    alert('Itens do Carrinho: ' + JSON.stringify(pedido));
 
     localStorage.setItem('cartItems', JSON.stringify(cartItems));
     localStorage.setItem('totalPrice', totalPrice)
@@ -193,7 +191,7 @@ finalizarPedidoButton.addEventListener('click', function (event) {
     saveCartData(); 
 
     // Redirecionar para a página de pagamento após enviar os dados para o servidor
-    //window.location.href = 'pagamento.html';
+    window.location.href = 'pagamento.html';
 });
 
 /*
@@ -232,9 +230,16 @@ function addItemToCart(itemId, type) {
         // Atualizar o preço total
         totalPrice += selectedItem.price;
 
-        
+        updateLocalStorage();
     }
 }
+
+// Função para atualizar o localStorage com os dados do carrinho
+function updateLocalStorage() {
+    localStorage.setItem('cartItems', JSON.stringify(cartItems));
+    localStorage.setItem('totalPrice', totalPrice);
+}
+
 
 /*
 
