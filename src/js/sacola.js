@@ -112,35 +112,45 @@ function initCart() {
 
 let totalPrice = 0;
 
+
+
 function saveCartData() {
     const pedido = {
-        id_cliente_pedido: 1, // Você pode definir o ID do cliente como desejado
-        status_pedido: "Em andamento",
-        pedidoBebida: [],
-        pedidoPizza: []
+        "id_cliente_pedido": 1, 
+        "status_pedido": "Em andamento",
+        "pedidoBebida": [],
+        "pedidoPizza": []
     };
+
+    
 
     // Iterar pelos itens do carrinho e adicionar ao pedido
     cartItems.forEach(item => {
 
         if (item.type === "bebidas") {
             pedido.pedidoBebida.push({
-                quantidade_pedido_bebida: item.quantity,
-                tamanho_pedido_bebida: "Grande", 
-                idBebida: {
-                    id_bebida: item.id
+                "quantidade_pedido_bebida": item.quantity,
+                "tamanho_pedido_bebida": "Grande",
+                "forma_pagamento_pedido": "Debito", 
+                "idBebida": {
+                    "id_bebida": item.id
                 }
             });
         } else if (item.type === "pizzas") {
             pedido.pedidoPizza.push({
-                quantidade_pedido_pizza: item.quantity,
-                tamanho_pedido_pizza: "Grande", 
-                idPizza: {
-                    id_pizza: item.id
+                "quantidade_pedido_pizza": item.quantity,
+                "tamanho_pedido_pizza": "Grande", 
+                "idPizza": {
+                    "id_pizza": item.id
                 }
             });
         }
     });
+
+    alert('Itens do Carrinho: ' + JSON.stringify(pedido));
+
+    localStorage.setItem('cartItems', JSON.stringify(cartItems));
+    localStorage.setItem('totalPrice', totalPrice)
 
     // Fazer a requisição POST com o objeto `pedido` no corpo
     fetch('http://localhost:9090/pedido/fazerPedido', {
@@ -208,12 +218,13 @@ function addItemToCart(itemId, type) {
             // Se o item já existe no carrinho, aumente a quantidade
             existingItem.quantity += 1;
         } else {
-            // Se o item não está no carrinho, adicione-o com quantidade 1
+            // Se o item não está no carrinho, adicione-o com quantidade 1 e defina o tipo
             cartItems.push({
-                id: selectedItem.id || generateUniqueID(), // Use a função generateUniqueID para gerar um ID único se o item não for do cardápio
+                id: selectedItem.id || generateUniqueID(),
                 name: selectedItem.name,
                 price: selectedItem.price,
-                quantity: 1
+                quantity: 1,
+                type: type // Defina o tipo do item (pizzas ou bebidas)
             });
         }
 
@@ -286,6 +297,8 @@ addButtonElements.forEach(button => {
         addItemToCart(itemIdPizza, "pizzas");
         // Atualizar o pop-up da sacola
         updateCartPopup();
+
+        
     });
 });
 
@@ -299,6 +312,8 @@ addButtonElementsBebidas.forEach(button => {
         addItemToCart(itemIdBebida, "bebidas");
         // Atualizar o pop-up da sacola
         updateCartPopup();
+
+        
     });
 });
 
@@ -343,19 +358,13 @@ closePopupButton.addEventListener("click", function () {
 
 
 function clearCart() {
-    // Limpar o array de itens do carrinho
     cartItems = [];
-    // Resetar o preço total para 0
     totalPrice = 0;
-    // Atualizar o pop-up da sacola para refletir as mudanças
     updateCartPopup();
-    // Remover os itens do carrinho do localStorage
     localStorage.removeItem('cartItems');
 }
 
-// Chamando a função clearCart() quando necessário
-// Exemplo: Quando um botão "Limpar Carrinho" é clicado
-// Suponha que você tenha um botão com o id "cancelar-pedido"
+
 const clearCartButton = document.getElementById('cancelar-pedido');
 clearCartButton.addEventListener('click', function () {
     clearCart();
