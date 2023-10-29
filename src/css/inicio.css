@@ -347,3 +347,43 @@
  .bom:hover{
      color: #fff;
  }
+
+.counter{
+    width: 200px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    justify-content: flex-end; /* Alinhe o conteúdo à direita */
+    margin-left: 40px;
+    
+}
+
+
+
+ input{
+    height: 20px;
+    font-size: 2rem;
+    width: 40%;
+    text-align: center;
+    margin: 0 4px;
+}
+
+ input:buttonexcluir{
+    background-color: #fff;
+}
+
+.vigia{
+    width: 45px; /* Defina o valor desejado para a largura */
+    height: 45px; /* Defina o valor desejado para a altura */
+    background-color: red;
+    color: #fff;
+    font-size: 3rem;
+    border: 0;
+    cursor: pointer;
+    transition: .25s ease-in-out ;
+    display: inline-block;
+}
+
+vigia:hover{
+    background-color: green;
+}
