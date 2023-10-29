@@ -65,7 +65,13 @@
           <a href="#" class="bom" data-id-pizza="1">Média</a>
           <a href="#" class="bom" data-id-pizza="1">Grande</a>
         </div>
-        <a href="#" class="btn" data-id-pizza="1">Adicionar</a>
+   <div class="counter">
+    <button  class="vigia" id="buttonexcluir">-</button>
+    <input type="text" value="0" disabled id="counterValue">
+    <button class="vigia" id="buttonadicionar">+</button>
+   </div>
+   <a href="#" class="btn" data-id-pizza="8">Adicionar</a>
+     
       </div>
 
       <div class="box">
@@ -243,6 +249,26 @@
         botao.style.color = '#fff';
       });
     });
+
+
+
+    const counter = document.querySelector('#counterValue');
+    const buttonexcluir = document.querySelector('#buttonexcluir');
+    const buttonadicionar = document.querySelector('#buttonadicionar');
+
+let value = counter.value;
+
+buttonadicionar.addEventListener('click', () =>{
+  value = ++value;
+  counter.value = value;
+});
+
+buttonexcluir.addEventListener('click', () =>{
+  value = --value;
+  counter.value = value;
+})
+
+
 
   </script>
 </body>
