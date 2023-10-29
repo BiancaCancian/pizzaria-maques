@@ -70,10 +70,15 @@
     <section class="revisar">
         <div class="box-Contenter">
             <div class="boxi">
+                <div id="empty-cart-message" style="display: none;">Sacola Vazia</div>
+                <div id="cart-items"></div>
+                <p>Total: R$ <span id="total-price">0,00</span></p>
                 <button class="joe"><strong>Finalizar</strong></button>
             </div>
         </div>
     </section>
+
+    <script src="./src/js/sacola.js"></script>
 
     <script>
         const botoes = document.querySelectorAll('.peperonildo');
