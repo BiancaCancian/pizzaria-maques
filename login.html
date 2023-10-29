@@ -29,7 +29,7 @@
             <h2>Preencha seus dados para fazer login</h2>
             <div class="info-login">
                 <div id="login-form">
-                    <form id="login-form" action="processar-login" method="post">
+                    <form id="login-form" action="inicio.html" method="post">
 
                         <label for="email">Qual é o seu e-mail?</label>
                         <input type="email" id="email" name="email" required placeholder="Informe seu e-mail">
@@ -42,27 +42,6 @@
             </div>
         </div>
 
-        <script>
-            document.getElementById("login-form").addEventListener("submit", function (event) {
-                var cpfInput = document.getElementById("cpf");
-                var cpf = cpfInput.value;
-
-                // Função para validar o formato do CPF
-                function validarFormatoCPF(cpf) {
-                    // Remova todos os caracteres não numéricos do valor do campo CPF
-                    cpf = cpf.replace(/\D/g, "");
-
-                    // Verifique se o valor contém apenas números
-                    if (!/^\d*$/.test(cpf)) {
-                        alert("CPF inválido. Por favor, verifique o formato e insira apenas números.");
-                        event.preventDefault(); // Impede o envio do formulário se o CPF for inválido
-                    }
-                }
-
-                validarFormatoCPF(cpf);
-            });
-        </script>
-        <script src="./src/js/login.js"></script>
 </body>
 
 </html>
