@@ -1,0 +1,44 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Source Sans 3', sans-serif
+}
+
+body {
+    background-color: rgb(200, 200, 200);
+}
+
+header {
+    height: 85px;
+}
+
+.login-cabecalho {
+    border-bottom: 1px solid #fff;
+    padding-bottom: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #fff;
+
+}
+
+
+.login-cabecalho #login-logo {
+    width: 200px;
+    /* Ajuste a largura desejada */
+    height: auto;
+    /* Mantém a proporção da imagem */
+    display: block;
+    margin: 0 auto;
+    margin-top: -13px;
+    text-align: center;
+}
+
+
+#login {
+    display: flex;
+    align-items: center;
+    gap: 64px;
+    padding: 64px 80px;
+}
