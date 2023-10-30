@@ -216,6 +216,7 @@ function addItemToCart(itemId, type) {
         if (existingItem) {
             // Se o item já existe no carrinho, aumente a quantidade
             existingItem.quantity += 1;
+        
         } else {
             // Se o item não está no carrinho, adicione-o com quantidade 1 e defina o tipo
             cartItems.push({
@@ -240,6 +241,33 @@ function updateLocalStorage() {
     localStorage.setItem('totalPrice', totalPrice);
 }
 
+function removeItemToCart(itemId, type) {
+    const selectedItem = menuItems[type].find(item => item.id === itemId);
+
+    if (selectedItem) {
+        const existingItem = cartItems.find(item => item.id === selectedItem.id);
+
+        if (existingItem) {
+            // Se o item já existe no carrinho, aumente a quantidade
+            existingItem.quantity -= 1;
+        } 
+
+        else {
+            // Se o item não está no carrinho, adicione-o com quantidade 1 e defina o tipo
+            cartItems.push({
+                id: selectedItem.id || generateUniqueID(),
+                name: selectedItem.name,
+                price: selectedItem.price,
+                quantity: 1,
+                type: type // Defina o tipo do item (pizzas ou bebidas)
+            });
+        }
+
+        totalPrice -= selectedItem.price;
+
+        updateLocalStorage();
+    }
+}
 
 /*
 
@@ -291,7 +319,8 @@ function updateCartPopup() {
 
 
 // PIZZAS
-const addButtonElements = document.querySelectorAll("#cardapio .btn");
+// PIZZAS - Adicionar itens
+const addButtonElements = document.querySelectorAll("#cardapio .vigia");
 addButtonElements.forEach(button => {
     button.addEventListener("click", function (event) {
         // Obter o ID da pizza a partir do atributo data-id
@@ -300,13 +329,30 @@ addButtonElements.forEach(button => {
         addItemToCart(itemIdPizza, "pizzas");
         // Atualizar o pop-up da sacola
         updateCartPopup();
-
-        
     });
 });
 
+const removeButtonElements = document.querySelectorAll("#cardapio .remove");
+removeButtonElements.forEach(button => {
+    button.addEventListener("click", function (event) {
+        // Obter o ID da pizza a partir do atributo data-id
+        const itemIdPizza = parseInt(event.target.getAttribute("data-id-pizza"));
+        // Adicionar o item ao carrinho passando o ID e o tipo (pizzas neste caso)
+        removeItemToCart(itemIdPizza, "pizzas");
+        // Atualizar o pop-up da sacola
+        updateCartPopup();
+
+        
+   });
+   
+
+   
+});
+
+
+
 // BEBIDAS
-const addButtonElementsBebidas = document.querySelectorAll("#bebidas .btn");
+const addButtonElementsBebidas = document.querySelectorAll("#bebidas .vigia");
 addButtonElementsBebidas.forEach(button => {
     button.addEventListener("click", function (event) {
         // Obter o ID da bebida a partir do atributo data-id
