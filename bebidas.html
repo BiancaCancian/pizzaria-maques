@@ -51,6 +51,11 @@
         <span class="price">R$5,90</span>
         <img src="./src/imagens/refrigerante-lata.jpg" alt="">
         <h3>Refrigerante lata</h3>
+        <div class="counter">
+          <button class="vigia buttonexcluir">-</button>
+          <input type="text" value="0" disabled class="counterValue">
+          <button href="#" class="vigia" id="buttonadicionar" data-id-bebida="10">+</button>
+      </div>
         <a href="#" class="btn" data-id-bebida="10">Adicionar</a>
       </div>
 
@@ -58,6 +63,11 @@
         <span class="price">R$10,90</span>
         <img src="./src/imagens/refrigerante-1-5.jpg" alt="">
         <h3>Refrigerante 1.5L</h3>
+        <div class="counter">
+          <button class="vigia buttonexcluir">-</button>
+          <input type="text" value="0" disabled class="counterValue">
+          <button href="#" class="vigia" id="buttonadicionar" data-id-bebida="11">+</button>
+      </div>
         <a href="#" class="btn" data-id-bebida="11">Adicionar</a>
       </div>
 
@@ -65,6 +75,11 @@
         <span class="price">R$15,90</span>
         <img src="./src/imagens/refrigerante-2-litros.jpg" alt="">
         <h3>Refrigerante 2 litros</h3>
+        <div class="counter">
+          <button class="vigia buttonexcluir">-</button>
+          <input type="text" value="0" disabled class="counterValue">
+          <button href="#" class="vigia" id="buttonadicionar" data-id-bebida="12">+</button>
+      </div>
         <a href="#" class="btn" data-id-bebida="12">Adicionar</a>
       </div>
 
@@ -72,6 +87,11 @@
         <span class="price">R$5,90</span>
         <img src="./src/imagens/suco-em-lata.jpg" alt="">
         <h3>Suco em lata</h3>
+        <div class="counter">
+          <button class="vigia buttonexcluir">-</button>
+          <input type="text" value="0" disabled class="counterValue">
+          <button href="#" class="vigia" id="buttonadicionar" data-id-bebida="13">+</button>
+      </div>
         <a href="#" class="btn" data-id-bebida="13">Adicionar</a>
       </div>
 
@@ -79,6 +99,11 @@
         <span class="price">R$10,90</span>
         <img src="./src/imagens/old-heineken.jpg" alt="">
         <h3>Heineken</h3>
+        <div class="counter">
+          <button class="vigia buttonexcluir">-</button>
+          <input type="text" value="0" disabled class="counterValue">
+          <button href="#" class="vigia" id="buttonadicionar" data-id-bebida="14">+</button>
+      </div>
         <a href="#" class="btn" data-id-bebida="14">Adicionar</a>
       </div>
 
@@ -87,6 +112,11 @@
         <span class="price">R$4,00</span>
         <img src="./src/imagens/aguas.jpg" alt="">
         <h3>Água</h3>
+        <div class="counter">
+          <button class="vigia buttonexcluir">-</button>
+          <input type="text" value="0" disabled class="counterValue">
+          <button href="#" class="vigia" id="buttonadicionar" data-id-bebida="15">+</button>
+        </div>
         <a href="#" class="btn" data-id-bebida="15">Adicionar</a>
       </div>
     </div>
@@ -95,6 +125,34 @@
 
   <script src="./src/js/inicio.js"></script>
   <script src="./src/js/sacola.js"></script>
+
+  <script>
+    document.querySelectorAll('.vigia#buttonadicionar').forEach(button => {
+      button.addEventListener('click', () => {
+          const bebida = button.closest('.box'); // Encontre a bebida específica
+          const counter = bebida.querySelector('.counterValue'); // Encontre o input de contagem
+          let value = parseInt(counter.value); // Obtenha o valor atual
+
+          value = ++value; // Aumente o valor
+          counter.value = value; // Atualize o input
+      });
+    });
+
+    document.querySelectorAll('.vigia.buttonexcluir').forEach(button => {
+      button.addEventListener('click', () => {
+          const bebida = button.closest('.box'); // Encontre a bebida específica
+          const counter = bebida.querySelector('.counterValue'); // Encontre o input de contagem
+          let value = parseInt(counter.value); // Obtenha o valor atual
+
+          if (value > 0) {
+              value = --value; // Diminua o valor, se for maior que 0
+              counter.value = value; // Atualize o input
+          }
+      });
+    });
+  
+  </script>
+
 </body>
 
 </html>
