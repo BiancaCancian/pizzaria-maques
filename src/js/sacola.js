@@ -115,14 +115,17 @@ let totalPrice = 0;
 
 
 async function saveCartData() {
+    const idUsuario = parseInt(localStorage.getItem("id_usuario"));
+    
+
     const pedido = {
-        "id_cliente_pedido": 2, 
+        "id_cliente_pedido": idUsuario,
         "status_pedido": "Em andamento",
         "pedidoBebida": [],
         "pedidoPizza": []
     };
 
-    
+
 
     // Iterar pelos itens do carrinho e adicionar ao pedido
     cartItems.forEach(item => {
@@ -130,7 +133,7 @@ async function saveCartData() {
         if (item.type === "bebidas") {
             pedido.pedidoBebida.push({
                 "quantidade_pedido_bebida": item.quantity,
-                "forma_pagamento_pedido": "Debito", 
+                "forma_pagamento_pedido": "Debito",
                 "idBebida": {
                     "id_bebida": item.id
                 }
@@ -138,7 +141,7 @@ async function saveCartData() {
         } else if (item.type === "pizzas") {
             pedido.pedidoPizza.push({
                 "quantidade_pedido_pizza": item.quantity,
-                "tamanho_pedido_pizza": "Grande", 
+                "tamanho_pedido_pizza": "Grande",
                 "idPizza": {
                     "id_pizza": item.id
                 }
@@ -149,26 +152,35 @@ async function saveCartData() {
 
     localStorage.setItem('cartItems', JSON.stringify(cartItems));
     localStorage.setItem('totalPrice', totalPrice)
+    alert("JSON do Pedido: " + JSON.stringify(pedido));
+    
 
     // Fazer a requisição POST com o objeto `pedido` no corpo
     await fetch('http://localhost:9090/pedido/fazerPedido', {
-        method: 'POST',
-        headers: {
-            'Accept': 'application/json',
-            'Content-Type': 'application/json'
-        },
-        body: JSON.stringify(pedido)
-    })
-    .then(response => response.json())
-    .then(data => {
-        console.log('Pedido feito com sucesso:', data);
-        // Limpar o carrinho e fazer outras ações após o pedido bem-sucedido, se necessário
-        clearCart();
-    })
-    .catch(error => {
-        console.error('Erro ao fazer pedido:', error);
-        // Tratar erros, se necessário
-    });
+            method: 'POST',
+            headers: {
+                'Accept': 'application/json',
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(pedido)
+        })
+        .then(response => response.json())
+        .then(data => {
+            
+            console.log('Pedido feito com sucesso:', data);
+
+            clearCart();
+
+            window.location.href = 'pagamento.html';
+            // Limpar o carrinho e fazer outras ações após o pedido bem-sucedido, se necessário
+            
+            
+        })
+        .catch(error => {
+            console.error('Erro ao fazer pedido:', error);
+            window.location.href = 'pagamento.html';
+            // Tratar erros, se necessário
+        });
 }
 
 /*
@@ -188,10 +200,10 @@ finalizarPedidoButton.addEventListener('click', function (event) {
     event.preventDefault(); // Impedir o comportamento padrão do link (navegação)
 
     // Enviar dados da sacola como JSON para o servidor e redirecionar para a página de pagamento
-    saveCartData(); 
+    saveCartData();
 
     // Redirecionar para a página de pagamento após enviar os dados para o servidor
-    window.location.href = 'pagamento.html';
+    
 });
 
 /*
@@ -216,7 +228,7 @@ function addItemToCart(itemId, type) {
         if (existingItem) {
             // Se o item já existe no carrinho, aumente a quantidade
             existingItem.quantity += 1;
-        
+
         } else {
             // Se o item não está no carrinho, adicione-o com quantidade 1 e defina o tipo
             cartItems.push({
@@ -250,9 +262,7 @@ function removeItemToCart(itemId, type) {
         if (existingItem) {
             // Se o item já existe no carrinho, aumente a quantidade
             existingItem.quantity -= 1;
-        } 
-
-        else {
+        } else {
             // Se o item não está no carrinho, adicione-o com quantidade 1 e defina o tipo
             cartItems.push({
                 id: selectedItem.id || generateUniqueID(),
@@ -342,11 +352,11 @@ removeButtonElements.forEach(button => {
         // Atualizar o pop-up da sacola
         updateCartPopup();
 
-        
-   });
-   
 
-   
+    });
+
+
+
 });
 
 
@@ -362,7 +372,7 @@ addButtonElementsBebidas.forEach(button => {
         // Atualizar o pop-up da sacola
         updateCartPopup();
 
-        
+
     });
 });
 
